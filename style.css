@@ -1,0 +1,78 @@
+header > img {
+  float: left;
+  margin-right: 20px;
+  border-radius: 7px;
+}
+
+header > span {
+  font-size: 3em;
+  font-family: "Ma Shan Zheng", cursive;
+  font-family: "Indie Flower", cursive;
+}
+
+header {
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+body {
+  background-image: url("./image/image.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: teal;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  margin-right: 0px;
+}
+
+span {
+  display: block;
+  padding-bottom: 10px;
+}
+
+footer {
+  text-align: right;
+  padding-right: 10px;
+  font-size: 0.9em;
+}
+
+.main-body {
+  background-color: pink;
+  border-radius: 7px;
+  padding: 15px;
+  display: flex;
+  flex-direction: row;
+  opacity: 0.9;
+}
+
+.row {
+  margin-top: 100px;
+}
+
+.login-box {
+  padding-left: 10px;
+}
+
+.body-text {
+  width: 70%;
+  padding-right: 10px;
+}
+
+@media (min-width: 770px) {
+  .main-body {
+    flex-direction: row;
+  }
+}
+
+@media (max-width: 769px) {
+  .main-body {
+    flex-direction: column;
+  }
+}
