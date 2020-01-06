@@ -1,6 +1,5 @@
 <html>
   <head>
-    <title>Mockup</title>
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -8,71 +7,149 @@
       crossorigin="anonymous"
     />
     <link
-      href="https://fonts.googleapis.com/css?family=Indie+Flower|Ma+Shan+Zheng&display=swap"
+      href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./style.css" />
+
+    <title>Company Sign-in</title>
   </head>
+
   <header>
-    <img src="./image/logo.jpg" alt="Company Logo" />
-    <span>
-      Company Name
-    </span>
+    <img src="image/CompanyLogo.gif" alt="Company Logo" />
+    <span class="header-subtext">Company Name Here</span>
   </header>
-  <body>
-    <div class="container">
-      <div class="row">
-        <div class="col-1"></div>
-        <div class="col main-body">
-          <div class="body-text">
-            <span>
-              This is some body text.
-            </span>
-            <span>
-              This is some more body text. I'm sure it's really important.
-            </span>
-          </div>
-          <div class="login-box">
-            <form action="#" method="POST">
-              <ul>
-                <li>
-                  <label for="username">Username:</label>
-                  <input type="text" id="username" name="username" />
-                </li>
-                <li>
-                  <label for="password">Password:&nbsp;</label>
-                  <input type="text" id="password" name="password" />
-                </li>
-              </ul>
-            </form>
-          </div>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="spacer col-1"></div>
+      <div class="col main-body">
+        <div class="body-text">
+          <p>
+            Please enter your login credentials here. If you have have not used
+            this site before, please register your information using the
+            following link.
+          </p>
+
+          <p id="pagenote">
+            Note: None of the links actually work. This is just an example
+            login.
+          </p>
+
+          <p>
+            <a href="#" target="_top" id="firstTimeUserLink"
+              >Register as a New User</a
+            >
+          </p>
         </div>
-        <div class="col-1"></div>
+
+        <div class="login-box">
+          <!-- TODO: form action and the JS function prepForm() need to be re-implemented -->
+          <form action="#" method="POST">
+            <span id="login-introduction">
+              Existing users may sign on using their:
+            </span>
+
+            <!-- The following is a hybrid dropdown and input box combined and styled with Bootstrap. 
+            It may require more fiddling with javascript to behave similar to the original (ex. hiding options from particular users, etc)
+            Just left it here as an alternative option.
+            -->
+
+            <!--
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <select
+                  class="custom-select"
+                  id="inputGroupSelect01"
+                  aria-label="Dropdown with user name types"
+                >
+                  <option selected>Choose...</option>
+                  <option value="username">Pension User Name</option>
+                  <option value="payrollnumber">Payroll Number</option>
+                  <option value="companyid">Company ID</option>
+                </select>
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                aria-label="Text input with dropdown button"
+              />
+            </div>
+          -->
+
+            <!-- The following is the login boxes that is closer to the original layout/classes -->
+
+            <div class="form-group" id="login-username">
+              <label for="username">Pension User Name:</label>
+              <input type="text" id="username" name="username"
+              class="form-control username-group" size: 20
+              oninput="usernameSelection('username')"/>
+            </div>
+
+            <div class="form-group" id="login-username">
+              <label for="username">or Payroll Number:</label>
+              <input type="text" id="payrollnumber" name="payrollnumber"
+              class="form-control username-group" size: 20
+              oninput="usernameSelection('payrollnumber')"/>
+            </div>
+
+            <div class="form-group" id="login-username">
+              <label for="username">or Company ID:</label>
+              <input type="text" id="companyid" name="companyid"
+              class="form-control username-group" size: 20
+              oninput="usernameSelection('companyid')"/>
+            </div>
+
+            <div class="form-group">
+              <label for="password">Password:</label>
+              <input type="password" id="password" name="password"
+              class="form-control" size: 20 />
+            </div>
+
+            <div id="login-control-buttons">
+              <button>Sign In</button>
+              <a href="#" target="_top" id="forgotPasswordLink"
+                >Forgot Password</a
+              >
+              <input type="reset" value="Reset Form" id="resetbutton" />
+            </div>
+          </form>
+        </div>
       </div>
+      <div class="spacer col-1"></div>
     </div>
-    <script
-      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+  </div>
+
+  <script src="form.js"></script>
+
+  <!-- Bootscrap required scripts -->
+  <script
+    src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"
+  ></script>
+
   <footer>
+    <!-- The following attribution can be omitted, per Unsplash's usage guidelines.  Please remove if the background image has changed. -->
     Photo by
     <a
       href="https://unsplash.com/@goodspleen?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
       target="_new"
       >Alexandre Chambon</a
     >
-    on <a href="https://unsplash.com/" target="_new">Unsplash</a>
+    on
+    <a href="https://unsplash.com/" id="forgotPasswordLink" target="_new"
+      >Unsplash</a
+    >
   </footer>
 </html>

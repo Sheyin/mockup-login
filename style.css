@@ -1,35 +1,27 @@
 header > img {
   float: left;
-  margin-right: 20px;
-  border-radius: 7px;
+  padding-right: 20px;
+  vertical-align: middle;
 }
 
 header > span {
-  font-size: 3em;
-  font-family: "Ma Shan Zheng", cursive;
-  font-family: "Indie Flower", cursive;
+  font-family: "Roboto Slab", serif;
+  font-size: 2.25em;
+  vertical-align: text-top;
 }
 
 header {
-  margin-left: 20px;
-  margin-top: 20px;
+  margin-top: auto;
+  margin-bottom: auto;
+  padding: 20px;
+  background-color: #efede8;
 }
 
 body {
   background-image: url("./image/image.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  background-color: teal;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-li {
-  margin-right: 0px;
+  background-color: #ffffff;
 }
 
 span {
@@ -40,39 +32,101 @@ span {
 footer {
   text-align: right;
   padding-right: 10px;
-  font-size: 0.9em;
+  font-size: 0.7em;
+}
+
+#firstTimeUserLink {
+  font-size: 1.3em;
 }
 
 .main-body {
-  background-color: pink;
-  border-radius: 7px;
-  padding: 15px;
   display: flex;
   flex-direction: row;
   opacity: 0.9;
+  padding: 0px;
 }
 
 .row {
   margin-top: 100px;
 }
 
-.login-box {
-  padding-left: 10px;
+.form-control {
+}
+
+label {
+  float: left;
 }
 
 .body-text {
-  width: 70%;
-  padding-right: 10px;
+  border-radius: 7px;
+  padding: 10px;
+  font-size: 1.2em;
+  font-family: "Times New Roman";
+  background-color: #84a9a3;
 }
 
-@media (min-width: 770px) {
+.login-box {
+  border-radius: 7px;
+  padding: 10px;
+  background-color: #ffffff;
+  text-align: right;
+}
+
+#login-control-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+#login-introduction {
+  text-align: left;
+}
+
+#pagenote {
+  font-weight: bold;
+}
+
+@media (min-width: 1000px) {
   .main-body {
     flex-direction: row;
   }
+  .body-text {
+    max-width: 50%;
+  }
 }
 
-@media (max-width: 769px) {
+@media (min-width: 500px) and (max-width: 999px) {
+  header {
+    padding: 10px;
+  }
+  header > span {
+    font-size: 1.1em;
+  }
+  .row {
+    margin-top: 20px;
+  }
+  .main-body {
+    flex-direction: row;
+  }
+  .body-text {
+    font-size: 1.2em;
+    max-width: 40%;
+  }
+}
+
+@media (max-width: 499px) {
+  header {
+    padding: 10px;
+  }
+  header > span {
+    font-size: 1.1em;
+  }
+  .row {
+    margin-top: 10px;
+  }
   .main-body {
     flex-direction: column;
+  }
+  .body-text {
+    font-size: 1em;
   }
 }
